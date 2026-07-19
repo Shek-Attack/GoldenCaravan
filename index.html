@@ -41,10 +41,11 @@
         .info-block p { color: #cbbcb0; font-size: 1rem; margin-bottom: 6px; }
         .map-btn { color: #dfb76c; font-size: 0.85rem; font-weight: bold; margin-top: 15px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Layout formatting for the individual days */
-        .hours-list { list-style: none; margin-top: 5px; }
-        .hours-row { display: flex; justify-content: space-between; color: #cbbcb0; font-size: 0.95rem; padding: 4px 0; max-width: 320px; }
-        .day-name { font-weight: 500; color: #ffffff; padding-right: 30px; }
+        /* Explicit 7-day structure settings */
+        .hours-list { list-style: none; margin-top: 5px; width: 100%; }
+        .hours-row { display: flex; justify-content: space-between; color: #cbbcb0; font-size: 0.95rem; padding: 6px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.03); max-width: 340px; }
+        .hours-row:last-child { border-bottom: none; }
+        .day-name { font-weight: 500; color: #ffffff; padding-right: 40px; }
         
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .gallery-item { height: 250px; border-radius: 4px; overflow: hidden; }
@@ -109,7 +110,7 @@
             <p>Our family's story is rooted in this vibrant heritage. We grew up in homes where cooking was an expression of love, generosity, and togetherness. Hand-pulled noodles prepared each morning, fragrant polo slowly simmered in a traditional kazan, and freshly baked samsa emerging from a clay oven were more than family recipes—they were cherished traditions passed from one generation to the next.</p>
         </section>
 
-        <!-- FIND US SECTION -->
+        <!-- FIND US SECTION WITH ALL 7 DAYS EXPLICITLY LISTED -->
         <section id="contact-sec">
             <h3>Find Us</h3>
             <a href="https://google.com" target="_blank" class="contact-link">
@@ -127,4 +128,3 @@
                             <div class="hours-row"><span class="day-name">Sunday</span><span>11:30 AM – 9:30 PM</span></div>
                             <div class="hours-row"><span class="day-name">Monday</span><span>11:30 AM – 9:30 PM</span></div>
                             <div class="hours-row"><span class="day-name">Tuesday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Wednesday</span><span>11:30 AM – 9:30 PM</span></div>
