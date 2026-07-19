@@ -17,9 +17,10 @@
             background-color: #1a110b; 
             color: #ffffff; 
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        /* 1. Header Navigation */
+        /* Header Navigation */
         header {
             position: fixed;
             top: 0;
@@ -32,11 +33,6 @@
             background-color: rgba(26, 17, 11, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 1000;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
@@ -67,20 +63,19 @@
             border-radius: 4px;
             font-weight: 600;
             transition: background-color 0.3s ease;
+            text-decoration: none;
         }
         .nav-btn:hover {
             background-color: #bd9b2d;
-            color: #1a110b;
         }
 
-        /* 2. Hero Section */
+        /* Hero Section */
         .hero {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 80px 6% 0 6%;
-            /* Replace the URL below with your actual food background image later */
             background: linear-gradient(rgba(26, 17, 11, 0.75), rgba(26, 17, 11, 0.75)), 
                         url('https://unsplash.com');
             background-size: cover;
@@ -90,8 +85,6 @@
             max-width: 650px;
             z-index: 2;
         }
-
-        /* Halal Location Badge */
         .badge {
             display: inline-flex;
             align-items: center;
@@ -106,8 +99,6 @@
             letter-spacing: 1px;
             margin-bottom: 25px;
         }
-
-        /* Hero Text */
         .hero-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.8rem;
@@ -120,10 +111,7 @@
             font-size: 1.1rem;
             color: #cbbcb0;
             margin-bottom: 35px;
-            font-weight: 400;
         }
-
-        /* Action Buttons */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -142,9 +130,7 @@
             gap: 8px;
             transition: background-color 0.3s ease;
         }
-        .btn-primary:hover {
-            background-color: #bd9b2d;
-        }
+        .btn-primary:hover { background-color: #bd9b2d; }
         .btn-secondary {
             background-color: transparent;
             color: #ffffff;
@@ -164,11 +150,73 @@
             border-color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Fallback Menu Section beneath the screen height */
-        .content-section {
-            padding: 80px 6%;
-            background-color: #1a110b;
+        /* Menu Section Content Layout */
+        .menu-section {
+            padding: 100px 6%;
+            background-color: #130c08;
+        }
+        .section-header {
             text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+        .section-header p {
+            color: #cbbcb0;
+            font-size: 1rem;
+        }
+
+        /* Visual Menu Grid Structure */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .menu-card {
+            background-color: #1a110b;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+        .menu-img-container {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #221811;
+        }
+        .menu-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .menu-card:hover .menu-img-container img {
+            transform: scale(1.05);
+        }
+        .menu-details {
+            padding: 25px;
+        }
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        .menu-description {
+            color: #cbbcb0;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -197,15 +245,45 @@
             
             <div class="btn-group">
                 <a href="#menu" class="btn-primary">View Our Menu <span>›</span></a>
-                <a href="#location" class="btn-secondary">☉ Get Directions</a>
+                <a href="https://www.doordash.com/store/golden-caravan-oakville-47997555/" target="_blank" class="btn-secondary">☉ Order on DoorDash</a>
             </div>
         </div>
     </section>
 
-    <!-- REST OF YOUR SITE CAN GO HERE -->
-    <div id="menu" class="content-section">
-        <h3>Our Menu Content Appears Here...</h3>
-    </div>
+    <!-- MENU SECTION -->
+    <section id="menu" class="menu-section">
+        <div class="section-header">
+            <h3>Popular Dishes</h3>
+            <p>Authentic recipes cooked with traditional Silk Road spices</p>
+        </div>
 
-</body>
-</html>
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="https://unsplash.com" alt="Laghman Noodles">
+                </div>
+                <div class="menu-details">
+                    <div class="menu-title">Signature Laghman</div>
+                    <div class="menu-description">Classic hand-pulled thick wheat noodles pulled fresh in-house, stir-fried with tender beef, chives, bell peppers, and authentic spices.</div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="https://unsplash.com" alt="Uyghur Polo Rice">
+                </div>
+                <div class="menu-details">
+                    <div class="menu-title">Traditional Uyghur Polo</div>
+                    <div class="menu-description">Fragrant steamed rice pilaf slow-cooked down with sweet julienned carrots, onions, and rich, tender chunks of spiced mutton lamb.</div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card">
+                <div class="menu-img-container">
+                    <img src="https://unsplash.com" alt="Samsa Pastries">
+                </div>
+                <div class="menu-details">
+                    <div class="menu-title">Golden Beef Samsa</div>
