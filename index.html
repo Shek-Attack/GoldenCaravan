@@ -14,7 +14,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #121212; 
+            background-color: #16100c; /* Exact dark brown palette from your image */
             color: #ffffff; 
             line-height: 1.6;
             scroll-behavior: smooth;
@@ -29,18 +29,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
-            background-color: rgba(18, 18, 18, 0.95);
-            border-bottom: 1px solid #2a2a2a;
+            padding: 24px 6%;
+            background-color: #16100c;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             z-index: 1000;
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #dfb76c;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
         }
         nav {
             display: flex;
@@ -48,12 +47,10 @@
             gap: 30px;
         }
         nav a {
-            color: #ccc;
+            color: #cbbcb0;
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             transition: color 0.3s ease;
         }
         nav a:hover {
@@ -61,28 +58,20 @@
         }
         .nav-btn {
             background-color: #dfb76c;
-            color: #121212;
+            color: #16100c;
             padding: 10px 22px;
             border-radius: 4px;
             font-weight: bold;
             text-decoration: none;
         }
-        .nav-btn:hover {
-            background-color: #cda255;
-        }
 
-        /* Hero Section with dark-tinted image overlay */
+        /* Hero Section Styling */
         .hero {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 80px 6% 0 6%;
-            background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.75)), 
-                        url('https://unsplash.com');
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid #2a2a2a;
+            padding: 120px 6% 60px 6%;
         }
         .hero-content {
             max-width: 650px;
@@ -91,38 +80,33 @@
         .badge {
             display: inline-flex;
             align-items: center;
-            background-color: rgba(223, 183, 108, 0.15);
+            background-color: rgba(223, 183, 108, 0.1);
             color: #dfb76c;
-            border: 1px solid rgba(223, 183, 108, 0.3);
+            border: 1px solid rgba(223, 183, 108, 0.2);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
+            letter-spacing: 1.5px;
+            margin-bottom: 30px;
         }
         .hero-content h2 {
             font-family: 'Playfair Display', serif;
             font-size: 3.8rem;
             line-height: 1.15;
             color: #ffffff;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-weight: 500;
         }
         .hero-content p {
-            font-size: 1.1rem;
-            color: #bbb;
-            margin-bottom: 35px;
-        }
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            font-size: 1.05rem;
+            color: #cbbcb0;
+            margin-bottom: 40px;
         }
         .btn-primary {
             background-color: #dfb76c;
-            color: #121212;
+            color: #16100c;
             text-decoration: none;
             padding: 14px 28px;
             border-radius: 4px;
@@ -134,66 +118,41 @@
             transition: background-color 0.3s ease;
         }
         .btn-primary:hover { background-color: #cda255; }
-        .btn-secondary {
-            background-color: transparent;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
 
-        /* Standardized Grid Layout for Other Sections */
+        /* Standardized Containers */
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 80px 6%;
         }
         section {
-            padding: 40px 0;
-            border-bottom: 1px solid #222;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         h3 {
             font-family: 'Playfair Display', serif;
             color: #dfb76c;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 2.2rem;
             margin-bottom: 40px;
-            text-align: center;
+            text-align: left;
+            font-weight: 500;
         }
 
-        /* Menu Grid Style */
+        /* Menu Section Cards */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         .menu-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 8px;
+            background: #1f1712;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
             overflow: hidden;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .menu-card:hover {
-            transform: translateY(-5px);
-            border-color: #dfb76c;
         }
         .menu-img-container {
-            height: 220px;
+            height: 200px;
             width: 100%;
-            overflow: hidden;
         }
         .menu-img-container img {
             width: 100%;
@@ -205,23 +164,61 @@
         }
         .menu-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #ffffff;
             margin-bottom: 8px;
         }
         .menu-description {
-            color: #bbb;
+            color: #cbbcb0;
             font-size: 0.9rem;
         }
 
-        /* About Text Layout */
+        /* Narrative Context Typography */
         .about-text p {
-            color: #ccc;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 25px auto;
-            text-align: center;
+            color: #cbbcb0;
+            font-size: 1.05rem;
+            margin-bottom: 25px;
             line-height: 1.8;
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            height: 250px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Address Footer Box styling */
+        .contact-panel {
+            background: #1f1712;
+            padding: 40px;
+            border-radius: 6px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @media(max-width: 768px) {
+            .contact-panel { grid-template-columns: 1fr; }
+        }
+        .info-block h4 {
+            color: #dfb76c;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .info-block p {
+            color: #cbbcb0;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -236,8 +233,8 @@
             <a href="#menu">Menu</a>
             <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
-            <a href="#reservations">Reservations</a>
-            <a href="#reservations" class="nav-btn">Reserve a Table</a>
+            <a href="#contact">Reservations</a> <!-- Handled dynamically or left placeholder -->
+            <a href="#" class="nav-btn" onclick="return false;">Reserve a Table</a>
         </nav>
     </header>
 
@@ -249,18 +246,18 @@
             <p>Authentic Uyghur halal cuisine — hand-pulled laghman noodles, fragrant polo, golden samsa, and more. Freshly made, warmly served.</p>
             
             <div class="btn-group">
-                <a href="#menu" class="btn-primary">View Our Menu <span>›</span></a>
-                <a href="https://doordash.com" target="_blank" class="btn-secondary">☉ Order on DoorDash</a>
+                <a href="#menu" class="btn-primary">View Our Menu ›</a>
             </div>
         </div>
     </section>
 
+    <!-- MAIN BODY SECTIONS WRAPPER -->
     <div class="container">
+        
         <!-- MENU SECTION -->
         <section id="menu">
             <h3>Popular Dishes</h3>
             <div class="menu-grid">
-                <!-- Item 1 -->
                 <div class="menu-card">
                     <div class="menu-img-container">
                         <img src="https://unsplash.com" alt="Laghman Noodles">
@@ -271,7 +268,6 @@
                     </div>
                 </div>
 
-                <!-- Item 2 -->
                 <div class="menu-card">
                     <div class="menu-img-container">
                         <img src="https://unsplash.com" alt="Uyghur Polo Rice">
@@ -282,9 +278,18 @@
                     </div>
                 </div>
 
-                <!-- Item 3 -->
                 <div class="menu-card">
                     <div class="menu-img-container">
                         <img src="https://unsplash.com" alt="Samsa Pastries">
                     </div>
                     <div class="menu-details">
+                        <div class="menu-title">Golden Beef Samsa</div>
+                        <div class="menu-description">Flaky, multi-layered puff pastry pockets packed full of minced beef, diced onions, and black pepper, baked inside a traditional tandoor oven.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-text">
+            <h3>Our Story</h3>
