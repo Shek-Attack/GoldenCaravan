@@ -3,113 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Caravan Restaurant</title>
+    <title>Golden Caravan - Oakville</title>
+    <!-- Google Fonts for premium typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    
     <style>
-        /* Modernized Styles */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #fff; background-color: #121212; line-height: 1.6; scroll-behavior: smooth; }
-        header { background: rgba(18, 18, 18, 0.95); position: fixed; width: 100%; top: 0; border-bottom: 1px solid #2a2a2a; z-index: 1000; padding: 15px 0; text-align: center; }
-        header h1 { margin: 0; color: #dfb76c; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; }
-        nav { margin-top: 10px; }
-        nav a { color: #ccc; margin: 0 15px; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
-        nav a:hover { color: #dfb76c; }
-        
-        /* Premium Hero Section with a clean background gradient */
-        .hero { background: linear-gradient(135deg, #1f1c18 0%, #100e0c 100%); text-align: center; padding: 160px 20px 100px 20px; border-bottom: 1px solid #2a2a2a; }
-        .hero h2 { font-size: 2.8rem; color: #dfb76c; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; color: #bbb; max-width: 600px; margin: 0 auto 30px auto; }
-        .btn { background: #dfb76c; color: #121212; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; }
-        .btn:hover { background: #cda255; }
-        
-        .container { max-width: 800px; margin: auto; padding: 60px 20px; }
-        section { padding: 40px 0; border-bottom: 1px solid #222; }
-        h2 { color: #dfb76c; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; text-align: center; }
-        p { color: #ccc; font-size: 1.05rem; text-align: center; max-width: 650px; margin: 0 auto; }
-        
-        /* Styled Menu Grid */
-        .menu-grid { margin-top: 30px; }
-        .menu-item { background: #1a1a1a; border: 1px solid #2a2a2a; padding: 20px; margin-bottom: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s; }
-        .menu-item:hover { transform: translateY(-2px); border-color: #dfb76c; }
-        .menu-text { text-align: left; }
-        .menu-title { font-size: 1.15rem; color: #fff; font-weight: 600; }
-        .menu-desc { font-size: 0.9rem; color: #888; margin-top: 4px; }
-        .menu-price { font-size: 1.2rem; color: #dfb76c; font-weight: bold; }
-        
-        /* Contact styling */
-        .contact-info { text-align: center; color: #ccc; font-size: 1.05rem; }
-        .contact-info p { margin: 10px 0; }
-        
-        footer { background: #0a0a0a; color: #666; text-align: center; padding: 20px; font-size: 0.9rem; }
+        /* CSS Reset and Font Setup */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #1a110b; 
+            color: #ffffff; 
+            line-height: 1.6;
+        }
+
+        /* 1. Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background-color: rgba(26, 17, 11, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1000;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        nav a {
+            color: #e0d5cb;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #d4af37;
+        }
+        .nav-btn {
+            background-color: #d4af37;
+            color: #1a110b;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .nav-btn:hover {
+            background-color: #bd9b2d;
+            color: #1a110b;
+        }
+
+        /* 2. Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 6% 0 6%;
+            /* Replace the URL below with your actual food background image later */
+            background: linear-gradient(rgba(26, 17, 11, 0.75), rgba(26, 17, 11, 0.75)), 
+                        url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
+
+        /* Halal Location Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(212, 175, 55, 0.15);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        /* Hero Text */
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #cbbcb0;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background-color: #d4af37;
+            color: #1a110b;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #bd9b2d;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Fallback Menu Section beneath the screen height */
+        .content-section {
+            padding: 80px 6%;
+            background-color: #1a110b;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -->
+    <!-- HEADER NAVIGATION -->
     <header>
-        <h1>Golden Caravan</h1>
+        <div class="logo-area">
+            <span class="logo-text">Golden Caravan</span>
+        </div>
         <nav>
-            <a href="#about">About</a>
             <a href="#menu">Menu</a>
-            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#reservations" class="nav-btn">Reserve a Table</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO HOME SECTION -->
     <section class="hero">
-        <h2>Experience Authentic Flavors</h2>
-        <p>Fresh ingredients, traditional recipes, and a warm atmosphere crafted just for you.</p>
-        <a href="#menu" class="btn">View Our Menu</a>
+        <div class="hero-content">
+            <div class="badge">✦ Certified Halal - Oakville, Ontario</div>
+            <h2>A Taste of the Silk Road in Oakville</h2>
+            <p>Authentic Uyghur halal cuisine — hand-pulled laghman noodles, fragrant polo, golden samsa, and more. Freshly made, warmly served.</p>
+            
+            <div class="btn-group">
+                <a href="#menu" class="btn-primary">View Our Menu <span>›</span></a>
+                <a href="#location" class="btn-secondary">☉ Get Directions</a>
+            </div>
+        </div>
     </section>
 
-    <div class="container">
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <h2>Our Story</h2>
-            <p>Welcome to Golden Caravan. We serve delicious, hand-crafted meals inspired by rich culinary traditions. Visit us for an unforgettable dining experience where every dish tells a story.</p>
-        </section>
-
-        <!-- MENU SECTION -->
-        <section id="menu">
-            <h2>Popular Dishes</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-text">
-                        <div class="menu-title">Signature Caravan Kebab</div>
-                        <div class="menu-desc">Grilled seasoned meats served over a bed of fragrant rice</div>
-                    </div>
-                    <div class="menu-price">$18.99</div>
-                </div>
-                
-                <div class="menu-item">
-                    <div class="menu-text">
-                        <div class="menu-title">Spiced Hummus & Pita</div>
-                        <div class="menu-desc">House-made chickpea dip topped with premium olive oil and herbs</div>
-                    </div>
-                    <div class="menu-price">$8.50</div>
-                </div>
-
-                <div class="menu-item">
-                    <div class="menu-text">
-                        <div class="menu-title">Saffron Rice Bowl</div>
-                        <div class="menu-desc">Premium Basmati rice infused with delicate saffron and fresh herbs</div>
-                    </div>
-                    <div class="menu-price">$12.00</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="contact-info">
-            <h2>Hours & Location</h2>
-            <p><strong>Address:</strong> 123 Main Street, Cityville</p>
-            <p><strong>Phone:</strong> (555) 123-4567</p>
-            <p><strong>Hours:</strong> Mon - Sun: 11:00 AM - 10:00 PM</p>
-        </section>
+    <!-- REST OF YOUR SITE CAN GO HERE -->
+    <div id="menu" class="content-section">
+        <h3>Our Menu Content Appears Here...</h3>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Golden Caravan. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
