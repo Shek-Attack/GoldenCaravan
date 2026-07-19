@@ -5,20 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Caravan Restaurant</title>
     <style>
-        /* Basic styling to make the UI look clean */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background: #111; color: #fff; padding: 20px; text-align: center; }
-        nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { background: #f4f4f4; text-align: center; padding: 60px 20px; }
-        .btn { background: #e67e22; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .menu-item { border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between; }
-        footer { background: #111; color: #fff; text-align: center; padding: 15px; margin-top: 40px; }
+        /* Modernized Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #fff; background-color: #121212; line-height: 1.6; scroll-behavior: smooth; }
+        header { background: rgba(18, 18, 18, 0.95); position: fixed; width: 100%; top: 0; border-bottom: 1px solid #2a2a2a; z-index: 1000; padding: 15px 0; text-align: center; }
+        header h1 { margin: 0; color: #dfb76c; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        nav { margin-top: 10px; }
+        nav a { color: #ccc; margin: 0 15px; text-decoration: none; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
+        nav a:hover { color: #dfb76c; }
+        
+        /* Premium Hero Section with a clean background gradient */
+        .hero { background: linear-gradient(135deg, #1f1c18 0%, #100e0c 100%); text-align: center; padding: 160px 20px 100px 20px; border-bottom: 1px solid #2a2a2a; }
+        .hero h2 { font-size: 2.8rem; color: #dfb76c; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #bbb; max-width: 600px; margin: 0 auto 30px auto; }
+        .btn { background: #dfb76c; color: #121212; padding: 12px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; }
+        .btn:hover { background: #cda255; }
+        
+        .container { max-width: 800px; margin: auto; padding: 60px 20px; }
+        section { padding: 40px 0; border-bottom: 1px solid #222; }
+        h2 { color: #dfb76c; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; text-align: center; }
+        p { color: #ccc; font-size: 1.05rem; text-align: center; max-width: 650px; margin: 0 auto; }
+        
+        /* Styled Menu Grid */
+        .menu-grid { margin-top: 30px; }
+        .menu-item { background: #1a1a1a; border: 1px solid #2a2a2a; padding: 20px; margin-bottom: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; transition: transform 0.2s; }
+        .menu-item:hover { transform: translateY(-2px); border-color: #dfb76c; }
+        .menu-text { text-align: left; }
+        .menu-title { font-size: 1.15rem; color: #fff; font-weight: 600; }
+        .menu-desc { font-size: 0.9rem; color: #888; margin-top: 4px; }
+        .menu-price { font-size: 1.2rem; color: #dfb76c; font-weight: bold; }
+        
+        /* Contact styling */
+        .contact-info { text-align: center; color: #ccc; font-size: 1.05rem; }
+        .contact-info p { margin: 10px 0; }
+        
+        footer { background: #0a0a0a; color: #666; text-align: center; padding: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <!-- 1. NAVIGATION BAR -->
+    <!-- NAVIGATION BAR -->
     <header>
         <h1>Golden Caravan</h1>
         <nav>
@@ -28,43 +53,52 @@
         </nav>
     </header>
 
-    <!-- 2. HERO / WELCOME SECTION -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <h2>Experience Authentic Flavors</h2>
-        <p>Fresh ingredients, traditional recipes, and a warm atmosphere.</p>
-        <br>
-        <a href="#menu" class="btn">View Menu</a>
+        <p>Fresh ingredients, traditional recipes, and a warm atmosphere crafted just for you.</p>
+        <a href="#menu" class="btn">View Our Menu</a>
     </section>
 
     <div class="container">
-        <!-- 3. ABOUT SECTION -->
+        <!-- ABOUT SECTION -->
         <section id="about">
             <h2>Our Story</h2>
-            <p>Welcome to Golden Caravan. We serve delicious, hand-crafted meals inspired by culinary traditions from around the world. Visit us for an unforgettable dining experience.</p>
+            <p>Welcome to Golden Caravan. We serve delicious, hand-crafted meals inspired by rich culinary traditions. Visit us for an unforgettable dining experience where every dish tells a story.</p>
         </section>
 
-        <!-- 4. MENU PREVIEW SECTION -->
+        <!-- MENU SECTION -->
         <section id="menu">
             <h2>Popular Dishes</h2>
-            
-            <div class="menu-item">
-                <span><strong>Signature Caravan Kebab</strong><br><small>Grilled seasoned meats with rice</small></span>
-                <span>$18.99</span>
-            </div>
-            
-            <div class="menu-item">
-                <span><strong>Spiced Hummus & Pita</strong><br><small>House-made chickpea dip with olive oil</small></span>
-                <span>$8.50</span>
-            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <div class="menu-title">Signature Caravan Kebab</div>
+                        <div class="menu-desc">Grilled seasoned meats served over a bed of fragrant rice</div>
+                    </div>
+                    <div class="menu-price">$18.99</div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <div class="menu-title">Spiced Hummus & Pita</div>
+                        <div class="menu-desc">House-made chickpea dip topped with premium olive oil and herbs</div>
+                    </div>
+                    <div class="menu-price">$8.50</div>
+                </div>
 
-            <div class="menu-item">
-                <span><strong>Saffron Rice Bowl</strong><br><small>Basmati rice infused with fragrant herbs</small></span>
-                <span>$12.00</span>
+                <div class="menu-item">
+                    <div class="menu-text">
+                        <div class="menu-title">Saffron Rice Bowl</div>
+                        <div class="menu-desc">Premium Basmati rice infused with delicate saffron and fresh herbs</div>
+                    </div>
+                    <div class="menu-price">$12.00</div>
+                </div>
             </div>
         </section>
 
-        <!-- 5. CONTACT & HOURS SECTION -->
-        <section id="contact">
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="contact-info">
             <h2>Hours & Location</h2>
             <p><strong>Address:</strong> 123 Main Street, Cityville</p>
             <p><strong>Phone:</strong> (555) 123-4567</p>
@@ -72,7 +106,7 @@
         </section>
     </div>
 
-    <!-- 6. FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Golden Caravan. All Rights Reserved.</p>
     </footer>
