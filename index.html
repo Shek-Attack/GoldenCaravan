@@ -4,49 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Caravan - Oakville</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://googleapis.com/css2?family=Playfair+Display:wght@500&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #16100c; 
-            color: #ffffff; 
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* Header Navigation */
-        header {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 24px 6%; background-color: #16100c;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03); z-index: 1000;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #16100c; color: #ffffff; line-height: 1.6; scroll-behavior: smooth; }
+        header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px 6%; background-color: #16100c; border-bottom: 1px solid rgba(255, 255, 255, 0.03); z-index: 1000; }
         .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #dfb76c; }
         nav { display: flex; align-items: center; gap: 30px; }
         nav a { color: #cbbcb0; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
         nav a:hover { color: #dfb76c; }
         .nav-btn { background-color: #dfb76c; color: #16100c; padding: 10px 22px; border-radius: 4px; font-weight: bold; text-decoration: none; }
-
-        /* Hero Landing Section */
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 6% 60px 6%; }
         .hero-content { max-width: 650px; }
         .badge { display: inline-flex; background-color: rgba(223, 183, 108, 0.1); color: #dfb76c; border: 1px solid rgba(223, 183, 108, 0.2); padding: 6px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 30px; }
         .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 3.8rem; line-height: 1.15; margin-bottom: 24px; font-weight: 500; }
         .hero-content p { font-size: 1.05rem; color: #cbbcb0; margin-bottom: 40px; }
         .btn-primary { background-color: #dfb76c; color: #16100c; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; }
-
-        /* Container Sections */
         .container { max-width: 1200px; margin: auto; padding: 40px 6% 80px 6%; }
         section { padding: 60px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); }
         h3 { font-family: 'Playfair Display', serif; color: #dfb76c; font-size: 2.2rem; margin-bottom: 40px; font-weight: 500; }
-
-        /* Menu Food Grid Layout */
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .menu-card { background: #1f1712; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 6px; overflow: hidden; }
         .menu-img-container { height: 200px; width: 100%; background: #2e221a; }
@@ -54,36 +32,30 @@
         .menu-details { padding: 25px; }
         .menu-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 8px; }
         .menu-description { color: #cbbcb0; font-size: 0.9rem; }
-
-        /* About Text Narrative */
-        .about-text p { color: #cbbcb0; font-size: 1.05rem; margin-bottom: 25px; line-height: 1.8; }
-
-        /* Clickable Find Us Panel */
-        .contact-panel { background: #1f1712; padding: 40px; border-radius: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
-        @media(max-width: 768px) { .contact-panel { grid-template-columns: 1fr; } }
+        .about-text p { color: #cbbcb0; font-size: 1.05rem; margin-bottom: 25px; line-height: 1.8; text-align: left; }
+        .contact-link { text-decoration: none; color: inherit; display: block; }
+        .contact-panel { background: #1f1712; padding: 40px; border-radius: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; transition: border-color 0.3s, transform 0.3s; border: 1px solid transparent; }
+        .contact-link:hover .contact-panel { border-color: #dfb76c; transform: translateY(-3px); }
         .info-block h4 { color: #dfb76c; font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; }
         .info-block p { color: #cbbcb0; font-size: 1rem; }
-        
-        /* Interactive Link styling for Map */
-        .map-link { text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease; }
-        .map-link:hover .contact-panel { border: 1px solid #dfb76c; transform: translateY(-3px); }
-        .map-icon-text { color: #dfb76c; font-size: 0.85rem; font-weight: bold; margin-top: 10px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
+        .map-btn { color: #dfb76c; font-size: 0.85rem; font-weight: bold; margin-top: 12px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .gallery-item { height: 250px; border-radius: 4px; overflow: hidden; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
 
-    <!-- HEADER NAVIGATION -->
     <header>
         <div class="logo-area"><span class="logo-text">Golden Caravan</span></div>
         <nav>
             <a href="#menu">Menu</a>
             <a href="#about">About</a>
-            <a href="#contact">Find Us</a>
+            <a href="#contact-sec">Find Us</a>
             <a href="#" class="nav-btn" onclick="return false;">Reserve a Table</a>
         </nav>
     </header>
 
-    <!-- HERO HOME SECTION -->
     <section class="hero">
         <div class="hero-content">
             <div class="badge">✦ Certified Halal - Oakville, Ontario</div>
@@ -93,10 +65,8 @@
         </div>
     </section>
 
-    <!-- MAIN BODY WRAPPER -->
     <div class="container">
         
-        <!-- MENU SECTION -->
         <section id="menu">
             <h3>Popular Dishes</h3>
             <div class="menu-grid">
@@ -124,23 +94,21 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION WITH NARRATIVE STORY PASSAGES -->
         <section id="about" class="about-text">
             <h3>Our Story</h3>
             <p>Golden Caravan was born from a deep love of Uyghur culture and a passion for sharing its rich culinary heritage with Canada. For centuries, Uyghur communities have flourished along the ancient Silk Road—one of history's greatest crossroads, where the flavors, spices, and traditions of East and West came together through trade, travel, and cultural exchange.</p>
             <p>Our family's story is rooted in this vibrant heritage. We grew up in homes where cooking was an expression of love, generosity, and togetherness. Hand-pulled noodles prepared each morning, fragrant polo slowly simmered in a traditional kazan, and freshly baked samsa emerging from a clay oven were more than family recipes—they were cherished traditions passed from one generation to the next.</p>
         </section>
 
-        <!-- CLICKABLE FIND US SECTION -->
-        <section id="contact">
+        <section id="contact-sec">
             <h3>Find Us</h3>
-            <a href="https://google.com" target="_blank" class="map-link">
+            <a href="https://google.com" target="_blank" class="contact-link">
                 <div class="contact-panel">
                     <div class="info-block">
                         <h4>Address & Phone</h4>
                         <p>438 Kerr St, Oakville, ON L6K 3C4</p>
                         <p style="margin-top: 8px;">Phone: (905) 338-8555</p>
-                        <span class="map-icon-text">➔ Open in Google Maps</span>
+                        <span class="map-btn">➔ Open Google Maps</span>
                     </div>
                     <div class="info-block">
                         <h4>Hours of Operation</h4>
@@ -150,7 +118,15 @@
             </a>
         </section>
 
-    </div>
+        <section id="gallery">
+            <h3>Gallery</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Kitchen Prep"></div>
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Dining Vibe"></div>
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Traditional Platter"></div>
+            </div>
+        </section>
 
+    </div>
 </body>
 </html>
