@@ -14,13 +14,13 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #16100c; /* Exact dark brown palette from your image */
+            background-color: #16100c; /* Exact rich dark brown background palette */
             color: #ffffff; 
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Fixed Navigation Header */
+        /* Fixed Navigation Header Bar */
         header {
             position: fixed;
             top: 0;
@@ -65,7 +65,7 @@
             text-decoration: none;
         }
 
-        /* Hero Section Styling */
+        /* Hero Landing Section */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -119,14 +119,14 @@
         }
         .btn-primary:hover { background-color: #cda255; }
 
-        /* Standardized Containers */
+        /* Structural Content Containers */
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 80px 6%;
+            padding: 40px 6% 80px 6%;
         }
         section {
-            padding: 60px 0;
+            padding: 80px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         h3 {
@@ -138,7 +138,7 @@
             font-weight: 500;
         }
 
-        /* Menu Section Cards */
+        /* Menu Food Grid Layout */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -173,15 +173,19 @@
             font-size: 0.9rem;
         }
 
-        /* Narrative Context Typography */
+        /* Narrative Story Layout */
         .about-text p {
             color: #cbbcb0;
             font-size: 1.05rem;
             margin-bottom: 25px;
             line-height: 1.8;
+            text-align: left;
+        }
+        .about-text p:last-child {
+            margin-bottom: 0;
         }
 
-        /* Gallery Grid Layout */
+        /* Photo Gallery Grid Layout */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -198,7 +202,7 @@
             object-fit: cover;
         }
 
-        /* Address Footer Box styling */
+        /* Address & Contact Details Layout Block */
         .contact-panel {
             background: #1f1712;
             padding: 40px;
@@ -233,7 +237,7 @@
             <a href="#menu">Menu</a>
             <a href="#about">About</a>
             <a href="#gallery">Gallery</a>
-            <a href="#contact">Reservations</a> <!-- Handled dynamically or left placeholder -->
+            <a href="#contact">Reservations</a>
             <a href="#" class="nav-btn" onclick="return false;">Reserve a Table</a>
         </nav>
     </header>
@@ -251,7 +255,7 @@
         </div>
     </section>
 
-    <!-- MAIN BODY SECTIONS WRAPPER -->
+    <!-- MAIN BODY CONTENT WRAPPER -->
     <div class="container">
         
         <!-- MENU SECTION -->
@@ -290,6 +294,7 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
+        <!-- ABOUT SECTION WITH EXACT REQUESTED TEXT PASSAGE -->
         <section id="about" class="about-text">
             <h3>Our Story</h3>
+               Golden Caravan was born from a deep love of Uyghur culture and a passion for sharing its rich culinary heritage with Canada. For centuries, Uyghur communities have flourished along the ancient Silk Road—one of history's greatest crossroads, where the flavors, spices, and traditions of East and West came together through trade, travel, and cultural exchange.Our family's story is rooted in this vibrant heritage. We grew up in homes where cooking was an expression of love, generosity, and togetherness. Hand-pulled noodles prepared each morning, fragrant polo slowly simmered in a traditional kazan, and freshly baked samsa emerging from a clay oven were more than family recipes—they were cherished traditions passed from one generation to the next.
