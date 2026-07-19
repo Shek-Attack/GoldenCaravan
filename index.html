@@ -24,7 +24,7 @@
         .hero-content p { font-size: 1.05rem; color: #cbbcb0; margin-bottom: 40px; }
         .btn-primary { background-color: #dfb76c; color: #16100c; text-decoration: none; padding: 14px 28px; border-radius: 4px; font-weight: 600; font-size: 0.95rem; }
         
-        .container { max-width: 1200px; margin: auto; padding: 40px 6% 120px 6%; } /* Added global bottom padding */
+        .container { max-width: 1200px; margin: auto; padding: 40px 6% 120px 6%; }
         section { padding: 80px 0; border-top: 1px solid rgba(255, 255, 255, 0.05); clear: both; }
         h3 { font-family: 'Playfair Display', serif; color: #dfb76c; font-size: 2.2rem; margin-bottom: 40px; font-weight: 500; }
         
@@ -39,21 +39,13 @@
         .about-text p { color: #cbbcb0; font-size: 1.05rem; margin-bottom: 25px; line-height: 1.8; text-align: left; }
         
         .contact-link { text-decoration: none; color: inherit; display: block; }
-        
-        /* FIXED: Height parameters opened to grow natively with 7 rows of text */
-        .contact-panel { background: #1f1712; padding: 50px 40px; border-radius: 6px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-top: 20px; transition: border-color 0.3s, transform 0.3s; border: 1px solid transparent; height: auto; min-height: 400px; }
-        @media(max-width: 768px) { .contact-panel { grid-template-columns: 1fr; gap: 40px; height: auto; } }
+        .contact-panel { background: #1f1712; padding: 50px 40px; border-radius: 6px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; margin-top: 20px; transition: border-color 0.3s, transform 0.3s; border: 1px solid transparent; }
+        @media(max-width: 768px) { .contact-panel { grid-template-columns: 1fr; gap: 40px; } }
         .contact-link:hover .contact-panel { border-color: #dfb76c; transform: translateY(-3px); }
         
         .info-block h4 { color: #dfb76c; font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 15px; }
         .info-block p { color: #cbbcb0; font-size: 1rem; margin-bottom: 6px; }
         .map-btn { color: #dfb76c; font-size: 0.85rem; font-weight: bold; margin-top: 25px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
-        
-        /* Grid spacing optimization for calendar dates */
-        .hours-list { list-style: none; margin-top: 5px; width: 100%; display: block; }
-        .hours-row { display: flex; justify-content: space-between; color: #cbbcb0; font-size: 0.95rem; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.03); width: 100%; max-width: 380px; }
-        .hours-row:last-child { border-bottom: none; }
-        .day-name { font-weight: 500; color: #ffffff; width: 120px; display: inline-block; }
         
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .gallery-item { height: 250px; border-radius: 4px; overflow: hidden; }
@@ -131,12 +123,22 @@
                     </div>
                     <div class="info-block">
                         <h4>Hours of Operation</h4>
-                        <div class="hours-list">
-                            <div class="hours-row"><span class="day-name">Sunday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Saturday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Monday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Tuesday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Wednesday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Thursday</span><span>11:30 AM – 9:30 PM</span></div>
-                            <div class="hours-row"><span class="day-name">Friday</span><span>11:30 AM – 9:30 PM</span></div>
+                        <p>Monday – Sunday: 11:30 AM – 9:30 PM</p>
+                    </div>
+                </div>
+            </a>
+        </section>
 
+        <!-- GALLERY SECTION -->
+        <section id="gallery">
+            <h3>Gallery</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Kitchen Prep"></div>
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Dining Vibe"></div>
+                <div class="gallery-item"><img src="https://unsplash.com" alt="Traditional Platter"></div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
