@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Caravan - Oakville</title>
-    <!-- Google Fonts for premium typography -->
+    <!-- Premium Google Fonts matching the image precisely -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Reset and Font Setup */
+        /* Base Reset & Setup */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
@@ -20,7 +20,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Header Navigation */
+        /* Fixed Navigation Bar Styling */
         header {
             position: fixed;
             top: 0;
@@ -30,15 +30,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background-color: rgba(26, 17, 11, 0.95);
+            background-color: #2b1d12; /* Warm dark brown header background from image */
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 1000;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: #d4af37;
-            font-weight: 600;
+            color: #dfb76c;
+            font-weight: 500;
             letter-spacing: 0.5px;
         }
         nav {
@@ -47,29 +52,29 @@
             gap: 30px;
         }
         nav a {
-            color: #e0d5cb;
+            color: #e6ded7;
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
         nav a:hover {
-            color: #d4af37;
+            color: #dfb76c;
         }
         .nav-btn {
-            background-color: #d4af37;
+            background-color: #dfb76c;
             color: #1a110b;
             padding: 10px 22px;
             border-radius: 4px;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
             text-decoration: none;
         }
         .nav-btn:hover {
-            background-color: #bd9b2d;
+            background-color: #cda255;
         }
 
-        /* Hero Section */
+        /* Hero Splash Banner Section */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -81,16 +86,13 @@
             background-size: cover;
             background-position: center;
         }
-        .hero-content {
-            max-width: 650px;
-            z-index: 2;
-        }
+        .hero-content { max-width: 650px; z-index: 2; }
         .badge {
             display: inline-flex;
             align-items: center;
-            background-color: rgba(212, 175, 55, 0.15);
-            color: #d4af37;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background-color: rgba(223, 183, 108, 0.15);
+            color: #dfb76c;
+            border: 1px solid rgba(223, 183, 108, 0.3);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
@@ -105,20 +107,11 @@
             line-height: 1.15;
             color: #ffffff;
             margin-bottom: 20px;
-            font-weight: 500;
         }
-        .hero-content p {
-            font-size: 1.1rem;
-            color: #cbbcb0;
-            margin-bottom: 35px;
-        }
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+        .hero-content p { font-size: 1.1rem; color: #cbbcb0; margin-bottom: 35px; }
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
         .btn-primary {
-            background-color: #d4af37;
+            background-color: #dfb76c;
             color: #1a110b;
             text-decoration: none;
             padding: 14px 28px;
@@ -128,9 +121,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
-        .btn-primary:hover { background-color: #bd9b2d; }
+        .btn-primary:hover { background-color: #cda255; }
         .btn-secondary {
             background-color: transparent;
             color: #ffffff;
@@ -143,98 +136,46 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.6);
-        }
+        .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.6); }
 
-        /* Menu Section Content Layout */
-        .menu-section {
-            padding: 100px 6%;
-            background-color: #130c08;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .section-header h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 10px;
-        }
-        .section-header p {
-            color: #cbbcb0;
-            font-size: 1rem;
-        }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .menu-card {
-            background-color: #1a110b;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .menu-card:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-        }
-        .menu-img-container {
-            height: 220px;
-            width: 100%;
-            overflow: hidden;
-            background-color: #221811;
-        }
-        .menu-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
+        /* Menu Display Elements */
+        .menu-section { padding: 100px 6%; background-color: #130c08; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #dfb76c; margin-bottom: 10px; }
+        .section-header p { color: #cbbcb0; font-size: 1rem; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .menu-card { background-color: #1a110b; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+        .menu-card:hover { transform: translateY(-5px); border-color: #dfb76c; }
+        .menu-img-container { height: 220px; width: 100%; overflow: hidden; background-color: #221811; }
+        .menu-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .menu-card:hover .menu-img-container img { transform: scale(1.05); }
         .menu-details { padding: 25px; }
-        .menu-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-        .menu-description {
-            color: #cbbcb0;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
+        .menu-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #ffffff; margin-bottom: 8px; }
+        .menu-description { color: #cbbcb0; font-size: 0.9rem; line-height: 1.5; }
 
         /* ------------------------------------------------------------------
-           NEW EXACT ABOUT SECTION STYLES
+           EXACT ABOUT US SECTION LAYOUT
         ------------------------------------------------------------------ */
         .about-section {
-            background-color: #f7f3eb; /* High-end light cream background */
-            color: #3e3228;           /* Rich, premium dark brown readable text */
-            padding: 100px 8%;
+            background-color: #f6efe2; /* Light cream tone from your background reference */
+            color: #483d35;           /* Authentic dark brown copy color text */
+            padding: 120px 8%;
         }
         .about-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.1fr 1.3fr;
-            gap: 60px;
+            grid-template-columns: 1.05fr 1.35fr;
+            gap: 70px;
             align-items: center;
         }
-        /* Mobile adjustment rule */
-        @media (max-width: 900px) {
-            .about-container { grid-template-columns: 1fr; gap: 40px; }
+        @media (max-width: 960px) {
+            .about-container { grid-template-columns: 1fr; gap: 50px; }
         }
         
-        /* Left Column: Visual Presentation Media */
+        /* Layout Component: Image Wrap & Corner Floating Badge */
         .about-image-wrapper {
             position: relative;
             width: 100%;
@@ -243,65 +184,60 @@
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-radius: 16px; /* Rounded image frame rules */
         }
-        /* Artisanal Badge Floating over image lower corner */
         .about-img-badge {
             position: absolute;
-            bottom: -15px;
-            right: -15px;
-            background-color: #1a110b;
+            bottom: 25px;
+            right: 25px;
+            background-color: #261a11; /* Dark label container styling from graphic */
             color: #ffffff;
-            padding: 16px 24px;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border-left: 3px solid #d4af37;
+            padding: 14px 22px;
+            border-radius: 6px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         .badge-title {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #d4af37;
-            margin-bottom: 2px;
+            color: #dfb76c;
+            margin-bottom: 3px;
         }
         .badge-text {
             font-size: 0.85rem;
-            font-weight: 500;
-            color: #e0d5cb;
-            white-space: nowrap;
+            font-weight: 400;
+            color: #ece4db;
         }
 
-        /* Right Column: Narrative Copy Elements */
+        /* Layout Component: Narrative Typography Columns */
         .about-text-content {
-            padding-left: 20px;
-        }
-        @media (max-width: 900px) {
-            .about-text-content { padding-left: 0; }
+            text-align: left;
         }
         .about-subtitle {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #bd9b2d;
-            margin-bottom: 15px;
+            letter-spacing: 2.5px;
+            color: #bfa068; /* Golden bronze tracking color element */
+            margin-bottom: 12px;
             display: block;
         }
         .about-text-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             line-height: 1.2;
-            color: #1a110b;
-            margin-bottom: 30px;
-            font-weight: 500;
+            color: #281d15;
+            margin-bottom: 35px;
+            font-weight: 600;
         }
         .about-text-content p {
             font-size: 1.05rem;
             line-height: 1.75;
-            color: #4a3e35;
+            color: #483d35;
             margin-bottom: 25px;
+            text-align: left;
+            max-width: 100%;
         }
         .about-text-content p:last-child {
             margin-bottom: 0;
@@ -318,3 +254,18 @@
         <nav>
             <a href="#menu">Menu</a>
             <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reservations">Reservations</a>
+            <a href="#reservations" class="nav-btn">Reserve a Table</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">✦ Certified Halal - Oakville, Ontario</div>
+            <h2>A Taste of the Silk Road in Oakville</h2>
+            <p>Authentic Uyghur halal cuisine — hand-pulled laghman noodles, fragrant polo, golden samsa, and more. Freshly made, warmly served.</p>
+            
+            <div class="btn-group">
+                <a href="#menu" class="btn-primary">View Our Menu <span>›</span></a>
