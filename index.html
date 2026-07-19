@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Caravan - Oakville</title>
-    <!-- Premium Google Fonts matching the image precisely -->
+    <!-- Premium Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     
     <style>
-        /* Base Reset & Setup */
+        /* CSS Reset and Font Setup */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #1a110b; 
+            background-color: #121212; 
             color: #ffffff; 
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* Fixed Navigation Bar Styling */
+        /* Fixed Navigation Header */
         header {
             position: fixed;
             top: 0;
@@ -30,21 +30,17 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background-color: #2b1d12; /* Warm dark brown header background from image */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #2a2a2a;
             z-index: 1000;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             color: #dfb76c;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
         nav {
             display: flex;
@@ -52,41 +48,46 @@
             gap: 30px;
         }
         nav a {
-            color: #e6ded7;
+            color: #ccc;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #dfb76c;
         }
         .nav-btn {
             background-color: #dfb76c;
-            color: #1a110b;
+            color: #121212;
             padding: 10px 22px;
             border-radius: 4px;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            font-weight: bold;
             text-decoration: none;
         }
         .nav-btn:hover {
             background-color: #cda255;
         }
 
-        /* Hero Splash Banner Section */
+        /* Hero Section with dark-tinted image overlay */
         .hero {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 80px 6% 0 6%;
-            background: linear-gradient(rgba(26, 17, 11, 0.75), rgba(26, 17, 11, 0.75)), 
+            background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.75)), 
                         url('https://unsplash.com');
             background-size: cover;
             background-position: center;
+            border-bottom: 1px solid #2a2a2a;
         }
-        .hero-content { max-width: 650px; z-index: 2; }
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
         .badge {
             display: inline-flex;
             align-items: center;
@@ -107,12 +108,21 @@
             line-height: 1.15;
             color: #ffffff;
             margin-bottom: 20px;
+            font-weight: 500;
         }
-        .hero-content p { font-size: 1.1rem; color: #cbbcb0; margin-bottom: 35px; }
-        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 35px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
         .btn-primary {
             background-color: #dfb76c;
-            color: #1a110b;
+            color: #121212;
             text-decoration: none;
             padding: 14px 28px;
             border-radius: 4px;
@@ -121,7 +131,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
         .btn-primary:hover { background-color: #cda255; }
         .btn-secondary {
@@ -136,111 +146,82 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
-        .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.6); }
-
-        /* Menu Display Elements */
-        .menu-section { padding: 100px 6%; background-color: #130c08; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h3 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #dfb76c; margin-bottom: 10px; }
-        .section-header p { color: #cbbcb0; font-size: 1rem; }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .menu-card { background-color: #1a110b; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
-        .menu-card:hover { transform: translateY(-5px); border-color: #dfb76c; }
-        .menu-img-container { height: 220px; width: 100%; overflow: hidden; background-color: #221811; }
-        .menu-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .menu-card:hover .menu-img-container img { transform: scale(1.05); }
-        .menu-details { padding: 25px; }
-        .menu-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #ffffff; margin-bottom: 8px; }
-        .menu-description { color: #cbbcb0; font-size: 0.9rem; line-height: 1.5; }
-
-        /* ------------------------------------------------------------------
-           EXACT ABOUT US SECTION LAYOUT
-        ------------------------------------------------------------------ */
-        .about-section {
-            background-color: #f6efe2; /* Light cream tone from your background reference */
-            color: #483d35;           /* Authentic dark brown copy color text */
-            padding: 120px 8%;
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.6);
         }
-        .about-container {
+
+        /* Standardized Grid Layout for Other Sections */
+        .container {
             max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.05fr 1.35fr;
-            gap: 70px;
-            align-items: center;
+            margin: auto;
+            padding: 80px 6%;
         }
-        @media (max-width: 960px) {
-            .about-container { grid-template-columns: 1fr; gap: 50px; }
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #222;
         }
-        
-        /* Layout Component: Image Wrap & Corner Floating Badge */
-        .about-image-wrapper {
-            position: relative;
-            width: 100%;
-        }
-        .about-main-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 16px; /* Rounded image frame rules */
-        }
-        .about-img-badge {
-            position: absolute;
-            bottom: 25px;
-            right: 25px;
-            background-color: #261a11; /* Dark label container styling from graphic */
-            color: #ffffff;
-            padding: 14px 22px;
-            border-radius: 6px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .badge-title {
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+        h3 {
+            font-family: 'Playfair Display', serif;
             color: #dfb76c;
-            margin-bottom: 3px;
-        }
-        .badge-text {
-            font-size: 0.85rem;
-            font-weight: 400;
-            color: #ece4db;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
-        /* Layout Component: Narrative Typography Columns */
-        .about-text-content {
-            text-align: left;
+        /* Menu Grid Style */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        .about-subtitle {
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #bfa068; /* Golden bronze tracking color element */
-            margin-bottom: 12px;
-            display: block;
+        .menu-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .about-text-content h3 {
+        .menu-card:hover {
+            transform: translateY(-5px);
+            border-color: #dfb76c;
+        }
+        .menu-img-container {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .menu-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .menu-details {
+            padding: 25px;
+        }
+        .menu-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            line-height: 1.2;
-            color: #281d15;
-            margin-bottom: 35px;
-            font-weight: 600;
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 8px;
         }
-        .about-text-content p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: #483d35;
-            margin-bottom: 25px;
-            text-align: left;
-            max-width: 100%;
+        .menu-description {
+            color: #bbb;
+            font-size: 0.9rem;
         }
-        .about-text-content p:last-child {
-            margin-bottom: 0;
+
+        /* About Text Layout */
+        .about-text p {
+            color: #ccc;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            text-align: center;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -260,7 +241,7 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO HOME SECTION -->
     <section class="hero">
         <div class="hero-content">
             <div class="badge">✦ Certified Halal - Oakville, Ontario</div>
@@ -269,3 +250,41 @@
             
             <div class="btn-group">
                 <a href="#menu" class="btn-primary">View Our Menu <span>›</span></a>
+                <a href="https://doordash.com" target="_blank" class="btn-secondary">☉ Order on DoorDash</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- MENU SECTION -->
+        <section id="menu">
+            <h3>Popular Dishes</h3>
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <div class="menu-card">
+                    <div class="menu-img-container">
+                        <img src="https://unsplash.com" alt="Laghman Noodles">
+                    </div>
+                    <div class="menu-details">
+                        <div class="menu-title">Signature Laghman</div>
+                        <div class="menu-description">Classic hand-pulled thick wheat noodles pulled fresh in-house, stir-fried with tender beef, chives, bell peppers, and authentic spices.</div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-card">
+                    <div class="menu-img-container">
+                        <img src="https://unsplash.com" alt="Uyghur Polo Rice">
+                    </div>
+                    <div class="menu-details">
+                        <div class="menu-title">Traditional Uyghur Polo</div>
+                        <div class="menu-description">Fragrant steamed rice pilaf slow-cooked down with sweet julienned carrots, onions, and rich, tender chunks of spiced mutton lamb.</div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-card">
+                    <div class="menu-img-container">
+                        <img src="https://unsplash.com" alt="Samsa Pastries">
+                    </div>
+                    <div class="menu-details">
