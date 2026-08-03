@@ -33,16 +33,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 24px 6%;
+            padding: 15px 6%;
             background-color: #16100c;
             border-bottom: 1px solid rgba(255,255,255,.03);
             z-index: 1000;
         }
 
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: #dfb76c;
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
         }
 
         nav {
@@ -265,7 +270,7 @@
 
 <header>
     <div class="logo-area">
-        <span class="logo-text">Golden Caravan</span>
+        <img src="images/logo.png" alt="Golden Caravan Logo" class="logo-image">
     </div>
 
     <nav>
